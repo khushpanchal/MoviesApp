@@ -12,7 +12,7 @@ class MainRepository @Inject constructor(
     private val apiInterface: ApiInterface
 ) {
 
-    suspend fun getMainData(): Flow<List<MainData>> {
+    fun getMainData(): Flow<List<MainData>> {
         return flow {
             emit(
                 apiInterface.getMoviesData().dataList ?: emptyList()
